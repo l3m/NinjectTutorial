@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{262932A6-7B05-41F2-8FF8-42EAB27E1B06}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NinjaVsWerewolves</RootNamespace>
+    <AssemblyName>NvW.Impl</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(ProjectDir)..\..\bin\$(Configuration)\</OutputPath>
+    <BaseOutputPath>$(ProjectDir)..\..\tmp\$(Configuration)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(ProjectDir)..\..\tmp\$(Configuration)\</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(ProjectDir)..\..\bin\$(Configuration)\</OutputPath>
+    <BaseOutputPath>$(ProjectDir)..\..\tmp\$(Configuration)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(ProjectDir)..\..\tmp\$(Configuration)\</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Creature\Jogger.cs" />
+    <Compile Include="Creature\Warrior.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Creature\Ninja.cs" />
+    <Compile Include="Creature\Werewolf.cs" />
+    <Compile Include="Weapon\Katana.cs" />
+    <Compile Include="Weapon\Claws.cs" />
+    <Compile Include="Weapon\Teeth.cs" />
+    <Compile Include="Weapon\Shuriken.cs" />
+    <Compile Include="Weapon\Weapon.cs" />
+    <Compile Include="World\WrappedRandom.cs" />
+    <Compile Include="World\Simulation.cs" />
+    <Compile Include="World\SimpleWorld.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NvW.Interfaces\NvW.Interfaces.csproj">
+      <Project>{BC0C84E4-6212-4894-884F-4DC059F4954F}</Project>
+      <Name>NvW.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
